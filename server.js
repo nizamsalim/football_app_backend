@@ -85,8 +85,8 @@ app.post("/football/add", async (req, res) => {
 // get all
 app.post("/football/team/get", async (req, res) => {
   try {
-    const team = await Football.find({});
     const { year } = req.body;
+    const team = await Football.find({ year });
 
     const sum = await Football.aggregate([
       {
